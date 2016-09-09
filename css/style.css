@@ -46,6 +46,7 @@
 #propozi .sel-o:active,
 #propozi .sel-o:hover{
     color: #23527c;
+    text-decoration: underline;
 }
 
 
@@ -57,8 +58,20 @@
 }
 
 
-#propozi .sel-o:hover,
-#propozi .sel-b:hover{
-    text-decoration: underline;
+
+#propozi .sel-v:hover{
+text-decoration : none    
     
+}
+
+#actions .reorderByCategory {
+    text-decoration: underline;
+}
+
+#actions .cat-actions {
+    color : #aaa;
+    font-size: 12px;
+}
+#complements li {
+    color: #767676;
 }
