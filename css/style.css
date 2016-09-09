@@ -1,0 +1,64 @@
+.navbar {
+    margin-top: 25px;
+}
+
+.navbar .rtext {
+
+        margin-right: 135px;
+    margin-left: 140px;
+}
+
+.navbar .robjects {
+    margin-right: 50px;
+        margin-left: 146px;
+}
+
+.navbar .ractions {
+    margin-right: 50px;
+    margin-left: 129px;
+}
+.list-group {
+    width: 345px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 25px;
+}
+
+.list-group:first-of-type {
+    margin-left: 25px;
+    height: 575px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ccc;
+    width: 350;
+}
+
+.list-group:last-of-type {
+    margin-right: 0px;    
+}
+
+
+#propozi .sel-o {
+    padding-right: 0px;
+}
+
+#propozi .sel-o,
+#propozi .sel-o:visited,
+#propozi .sel-o:active,
+#propozi .sel-o:hover{
+    color: #23527c;
+}
+
+
+#propozi .sel-v,
+#propozi .sel-v:visited,
+#propozi .sel-v:active,
+#propozi .sel-v:hover{
+ color : #4f9fcf;
+}
+
+
+#propozi .sel-o:hover,
+#propozi .sel-b:hover{
+    text-decoration: underline;
+    
+}

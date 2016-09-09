@@ -6,12 +6,8 @@
     <meta charset="utf-8">
 
     <title></title>
-
-
-
     <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-    <link href='css/jquery-jvectormap-2.0.3.css' rel='stylesheet' type='text/css'>
-    <!--link href='css/style.css' rel='stylesheet' type='text/css'-->
+    <link href='css/style.css' rel='stylesheet' type='text/css'>
     <style>
 
            
@@ -38,9 +34,17 @@
 	    </div>
 	    <ul class="nav navbar-nav">
 
-	      <li class="">
-		<a class="navbar-brand" href="#"></a>
+	      <li class="rtext">
+		<a class="navbar-brand" title="text" href="#">text</a>
 	      </li>	      
+
+	      <li class="robjects" >
+		<a class="navbar-brand" title="related objects based on verbs from same subcategory (ex: nutrition, behavior, opinion)" href="#">related objects</a>
+	      </li>
+
+	       <li class="ractions" >
+		<a class="navbar-brand" title="related types of actions/verbs based on the use of object with those actions" href="#">related types of action</a>
+	      </li>
 	      
 	    </ul>
 	 
@@ -54,7 +58,12 @@
 	<div class="">
 	  <div class="inline-block" style="position: relative; padding-top; 80px; width:100%;">
 
+	    
+	    <ul id="propozi" class="list-group"> </ul>
+	    <ul id="complements" class="list-group"> </ul>
+	    <ul id="actions" class="list-group"> </ul>
 
+	     
 	    <div id="spinner" class="load-bar">
 	      <div class="bar"></div>
 	      <div class="bar"></div>
@@ -70,11 +79,46 @@
     </div>      
 
 
-      
-    <script src="libs/jquery-3.1.0.min.js"> </script>
-    <script src="libs/bootstrap.min.js"> </script>
 
-    <script src="js/main.js"> </script>    
+
+    <script src="lib/jquery-3.1.0.min.js"> </script>
+    
+    <script src="lib/underscore-min.js"> </script>
+    <script src="lib/bootstrap.min.js"> </script>
+
+    <script src="js/sample-data.js"> </script>
+    <script src="js/service.js"> </script>
+    <script src="js/main.js"> </script>
+
+
+    <script id="item" type="text/html">
+      <li id="<%=n %>" class="list-group-item"><div>
+	  <%=s %>
+	  <a href="#" class=" sel-v"><%=v %></a>
+	  <a href="#" class=" sel-o"><%=o %></a><span>.</span>
+	</div>
+      </li>
+    </script>
+
+
+    <script id="comp-item" type="text/html">
+      <li id="" class="list-group-item"><div>
+	  
+	  <a href="#" class=" sel-v"><%=o %></a>
+	  
+	</div>
+      </li>
+    </script>
+    
+    
+    <script id="action-item" type="text/html">
+      <li id="" class="list-group-item"><div>
+	  <a href="#" type="<%=type %>" class="reorderByCategory"><%=c %></a>
+	</div>
+      </li>
+    </script>
+    
+
     
   </body>
 
