@@ -11,19 +11,6 @@ function parent(child){
 
 }
 
-function right(parent){
-    return (parent*2)+2;
-}
-
-
-function left(parent){
-    return (parent*2)+1;
-}
-
-
-
-
-
 
 function build (d, a, p){
     var node = d[p];
@@ -34,12 +21,12 @@ function build (d, a, p){
     
     
     if(d.length > 0 && node != null){
-        var ni = d.indexOf(node);
+        var ni = node.n;
         var pi = parent(ni);
-        if(ni > -1 && pi> -1 && d[pi] < node){
+        if(ni > -1 && pi> -1 && d[pi].rank < node.rank){
             var tmp = d[pi];
-            d[pi] = d[ni];
-            d[ni] = tmp;
+            d[pi] = d[ni]; d[pi].n = ni;
+            d[ni] = tmp; d[ni].n = pi;
             
             build(d, a, pi);
         }else {
@@ -53,7 +40,7 @@ function build (d, a, p){
 
 
 
-console.log(build([], v.slice(0)));
+//console.log(build([], v.slice(0)));
 
 
 
@@ -74,4 +61,4 @@ function sorth (i, heap, response){
 }
 
 
-console.log(sorth(0, build([], v.slice(0))))
+//console.log(sorth(0, build([], v.slice(0))))
