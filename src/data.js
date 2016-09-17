@@ -1,75 +1,65 @@
 
-var data = [
+
+
+module.exports = [
     {
 	n: 0,
 	s: 'Ani',
 	o: 'a drama',
 	v: 'plays'
-    },
-    {
+    },{
 	n: 1,
 	s: 'Anna',
 	v: 'is eating',
 	o: 'a cookie'
-    },
-    {
+    },{
 	n: 2,
 	s: 'Henry',
 	v: 'drinks',
 	o: 'coffe'
-    },
-    {
+    },{
 	n: 3,
 	s: 'Sarah',
 	o: 'a pen'
-    },
-    {
+    },{
 	n: 4,
 	s: 'John',
 	v: 'tells'
-    },
-    {
+    },{
 	n: 5,
 	s: '',
 	o: 'a drama'
-    },
-    {
+    },{
 	n : 5,
 	s : 'Mary',
 	v : 'plays',
 	o : 'with cats'
-    },
-    {
+    },{
 	n : 6,
 	s : 'Alice',
 	v : 'scary',
 	o : 'cats'
-    },
-    {
+    },{
 	n : 7,
 	s : 'Nicu',
 	v : "dislike",
 	o : "rats"
-    },
-    {
+    },{
 	n : 8,
 	s : 'Alina',
 	v : 'eats',
 	o : 'cake'
-    },
-    {
+    },{
 	n : 9,
 	s : 'Marius',
 	v : 'runs',
 	o : 'at school'
-    },
-    {
+    },{
 	n : 10,
 	s : 'Alina',
 	v : 'plays',
 	o : 'chess'
-    },
-    {
+    },{
 	n : 11,
 	s : 'Mihai',
 	v : 'go hiking',
@@ -166,4 +156,6 @@ var data = [
 	v : 'feeds',
 	o : 'ducks'
     }
-];
+]
+
+

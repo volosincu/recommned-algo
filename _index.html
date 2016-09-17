@@ -16,13 +16,7 @@
 
   
   <body id="tm">
-
-
-    
     <div class="container">
-
-
-
       <div class="row">
 
 	<nav class="navbar navbar-default">
@@ -77,22 +71,16 @@
     
       
     </div>      
-
-
-
-
+<!--
     <script src="lib/jquery-3.1.0.min.js"> </script>
-    
     <script src="lib/underscore-min.js"> </script>
     <script src="lib/bootstrap.min.js"> </script>
-
-    <script src="js/sample-data.js"> </script>
-    <script src="js/uiHandlers.js"> </script>
-    <script src="js/service.js"> </script>
-    <script src="js/main.js"> </script>
+-->    
+    <script src="dist/dist.js"> </script>
 
 
-    <script id="item" type="text/html">
+    
+    <script id="proposition" type="text/html">
       <li id="<%=n %>" class="list-group-item"><div>
 	  <%=s %>
 	  <a href="#" class=" sel-v"><%=v %></a>
@@ -102,7 +90,7 @@
     </script>
 
 
-    <script id="comp-item" type="text/html">
+    <script id="complement" type="text/html">
       <li id="" class="list-group-item"><div>
 	  
 	  <%=o %>
@@ -112,7 +100,7 @@
     </script>
     
     
-    <script id="action-item" type="text/html">
+    <script id="verb" type="text/html">
       <li id="" class="list-group-item"><div>
 	  <a href="#" type="<%=type %>" class="reorderByCategory"><%=c %></a>
 	  <div class="cat-actions"><%=actions %></div>
@@ -121,6 +109,7 @@
     </script>
     
 
+    
     
   </body>
 

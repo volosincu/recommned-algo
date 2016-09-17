@@ -1,21 +1,20 @@
 
-templates = {};
-$(document).ready (function(){
-    /**
-     *
-     */
-    templates = {
-	"template-propositions" : _.template($("#item").html()),
-	"template_complements" : _.template($("#comp-item").html()),
-	"template_verbs" : _.template($("#action-item").html())
-    }
-});
+
+
+var $ = require('jquery');
+var _service = require('./service');
+var templates = require('./templates');
+var dictionaries = require('./dictionaries');
+
 
 /**
  *
  */
-Handler = {
+module.exports = (function (){
+    
 
+    var hmodule = {
+    
      /**
      *
      */
@@ -36,11 +35,12 @@ Handler = {
 	
 	context.findTypesAndCatRelatedToObject(v).forEach(function (o){
 	    o.actions = dictionaries[o.type][o.c].toString();
-	    var html = templates['template_verbs'](o);
+	    var template = templates.tmpl('verb'),
+		html = template(o);
 	    $("#actions").append(html);
 	});
 
-	$(".reorderByCategory").on("click", Handler.reorderByCatHandler);
+	$(".reorderByCategory").on("click", hmodule.reorderByCatHandler);
 
 	var va = $(this).prev().text();
 	
@@ -50,7 +50,8 @@ Handler = {
 	$("#complements").html("");
 	
 	_service.getObjectsInCriteria()[y.type][y.c].forEach(function (o){
-	    var html = templates['template_complements'](o);
+	    var template = templates.tmpl('complement'),
+		html = template(o);
 	    $("#complements").append(html);
 	});
 	
@@ -81,12 +82,14 @@ Handler = {
 	    return a.rank;
 	});
 
-	_service.render(data, templates["template-propositions"]);
+	_service.render(data);
 	
     },
 
  
+    }
 
-    
 
-}
+    return hmodule;
+
+})();

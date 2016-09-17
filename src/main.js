@@ -1,24 +1,13 @@
 
 
-/**
- *
- */
-var dictionaries = {
-    "action-verbs" : {
-	nutrition: ["eat", "drink", "tastes", "feed"],
-	movement : ["walk", "go", "hiking", "run", "grow", "makes"],
-	behaviour : [ "play", "avoids" ]
-    },
-    "stative-verbs" : {
-	opinion : ["understand", "know", "tell"],
-	posession : ["have", "own"],
-	emotion : ["like", "hates", "fears", "dislike", "enjoy", "scary"]
-    }
-    
-    
-}
 
 
+var $ = require('jquery');
+var dictionaries = require('./dictionaries');
+
+
+var data = require('./data');
+var _service = require('./service');
 
 
 window.context = {};
@@ -73,14 +62,10 @@ $(document).ready(function(ctx){
             });
 	});
 	
-	return classes;
-    }	
-    
 
-   
     objectsInCriteria = _service.indexObjectsForVerbs(data);    
-    _service.render(data, templates["template-propositions"]);
-   
+    _service.render(data);
+
 
 
 
