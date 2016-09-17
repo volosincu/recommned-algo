@@ -6,6 +6,8 @@ var path = require('path');
 var SRC_DIR = path.resolve(__dirname, 'src');
 var DIST_DIR = path.resolve(__dirname, 'dist');
 
+var debug = true;
+
 module.exports = {
     //context : __dirname,
     entry: {
