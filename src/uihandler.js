@@ -2,7 +2,7 @@
 
 
 var $ = require('jquery');
-var _service = require('./service');
+var txtanalyz = require('./txtanalyz');
 var templates = require('./templates');
 var dictionaries = require('./dictionaries');
 
@@ -32,8 +32,10 @@ module.exports = (function (){
 	var v = $(this).text();
 	
 	$("#actions").html("");
+
 	
-	context.findTypesAndCatRelatedToObject(v).forEach(function (o){
+	
+	txtanalyz.actionClassesAssocToObject(v, objectsInCriteria).forEach(function (o){
 	    o.actions = dictionaries[o.type][o.c].toString();
 	    var template = templates.tmpl('verb'),
 		html = template(o);
@@ -45,11 +47,11 @@ module.exports = (function (){
 	var va = $(this).prev().text();
 	
 
-	var y = context.getTypeAndCategoryOfVerb(va);
+	var y = txtanalyz.getTypeAndCategoryOfVerb(va);
 
 	$("#complements").html("");
 	
-	_service.getObjectsInCriteria()[y.type][y.c].forEach(function (o){
+	txtanalyz.getObjectsInCriteria()[y.type][y.c].forEach(function (o){
 	    var template = templates.tmpl('complement'),
 		html = template(o);
 	    $("#complements").append(html);
@@ -64,9 +66,9 @@ module.exports = (function (){
 	e.preventDefault();
 	var c = $(this).text(), type = $(this).attr("type");
 
-	_service.iteratePropositions(data, function(it){
+	txtanalyz.iteratePropositions(data, function(it){
 	
-	    var tc = context.getTypeAndCategoryOfVerb(it.v)
+	    var tc = txtanalyz.getTypeAndCategoryOfVerb(it.v)
 	    if(type === tc.type){
 		it.rank = 2;
 		if(c === tc.c){
@@ -82,7 +84,7 @@ module.exports = (function (){
 	    return a.rank;
 	});
 
-	_service.render(data);
+	//txtanalyz.render(data);
 	
     },
 

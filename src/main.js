@@ -5,20 +5,21 @@ var dictionaries = require('./dictionaries');
 
 
 var data = require('./data');
-var _service = require('./service');
+var templates = require('./templates');
+var uihandler = require('./uihandler');
+var txtanalyz = require('./txtanalyz');
 
 
 window.context = {};
 
 $(document).ready(function(ctx){
-    var objectsInCriteria;
-    
+        
     /**
      *
      */
     var template = templates.tmpl('proposition');
     $("#propozi").html("");
-    iteratePropositions(data, function(item){
+    txtanalyz.iteratePropositions(data, function(item){
 	var html = template(item);
 	$("#propozi").append(html);
     });
@@ -30,8 +31,10 @@ $(document).ready(function(ctx){
     $(".sel-v").on("click", uihandler.selectVerbHandler);
     $(".sel-o").on("click", uihandler.selectObjectHandler);
     
-    
-    objectsInCriteria = _service.indexObjectsForVerbs(data);    
-    
+
+    var verbs = txtanalyz.indexVerbsFromData(data);
+    var objectsInCriteria = txtanalyz.indexObjectsForVerbs(data, verbs);    
+
+    console.log(verbs, objectsInCriteria);
 
 });
