@@ -1,7 +1,7 @@
-
 /**
- *
+ * @author Mihai-Bogdan Volosincu
  */
+
 module.exports = (function (){
     return {
 	"action-verbs" : {

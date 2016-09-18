@@ -1,17 +1,25 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import CompPropUL from "./comp-prop-ul"
 
 
-var $ = require('jquery');
-var data = require('./data');
-var UIhandler = require('./uihandler');
-var txtanalyz = require('./txtanalyz');
+import $ from 'jquery';
+import data from './data';
+import txtanalyz from './txtanalyz';
 
 
-$(document).ready(function(ctx){
 
-    var verbs = txtanalyz.indexVerbsFromData(data);
-    var objectsInCriteria = txtanalyz.indexObjectsForVerbs(data, verbs);    
 
-    var uihandler = new UIhandler(objectsInCriteria);
-    uihandler.render();
-    
-});
+let verbs = txtanalyz.indexVerbsFromData(data);
+let objectsInCriteria = txtanalyz.indexObjectsForVerbs(data, verbs);    
+
+
+
+console.log(objectsInCriteria);
+
+
+const props = document.getElementById('comp-prop-ul');
+ReactDOM.render(<CompPropUL/>, props);
+
+
+
