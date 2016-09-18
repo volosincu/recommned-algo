@@ -50,9 +50,9 @@ module.exports = (function(){
 	
 	verbs.forEach(function(verb){
 	    
-	    var y = __getTypeAndCategoryOfVerb(verb);
+	    var y = __getVerbClass(verb);
 	    if(y.type && y.c){
-		objectsInCriteria = __getObjectsOfTypeAndCategory(data, objectsInCriteria, y.type, y.c);
+		objectsInCriteria = __getObjectsOfActionClass(data, objectsInCriteria, y.type, y.c);
 	    }
 	    
 	});
@@ -77,7 +77,7 @@ module.exports = (function(){
     /**
      *
      */
-    var __getObjectsOfTypeAndCategory = function(data, objectsInCriteria, type, c) {
+    var __getObjectsOfActionClass = function(data, objectsInCriteria, type, c) {
 	var cached = true;
 	if (!objectsInCriteria[type]){
 	    objectsInCriteria[type] = {};
@@ -105,7 +105,7 @@ module.exports = (function(){
     /**
      *
      */
-    var __getTypeAndCategoryOfVerb = function(verb){
+    var __getVerbClass = function(verb){
 	var criteria = {type : null, c: null, verb: null};
 	var keys = Object.keys(dictionaries), subkeys;
 	
@@ -158,8 +158,8 @@ module.exports = (function(){
 	isDefinedInDictionary : __isDefinedInDictionary,
 	indexObjectsForVerbs :__indexObjectsForVerbs,
 	indexVerbsFromData : __indexVerbsFromData,
-	getObjectsOfTypeAndCategory : __getObjectsOfTypeAndCategory,
-	getTypeAndCategoryOfVerb : __getTypeAndCategoryOfVerb,
+	getObjectsOfActionClass : __getObjectsOfActionClass,
+	getVerbClass : __getVerbClass,
 	actionClassesAssocToObject: __actionClassesAssocToObject
 	
     }

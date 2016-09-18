@@ -81,24 +81,24 @@ describe ('text analyser', function (){
        });
 
     
-    it("getObjectsOfTypeAndCategory(data, objectsInCriteria, type, c) - should return an object",
+    it("getObjectsOfActionClass(data, objectsInCriteria, type, c) - should return an object",
        function(){
 	   var objectsInCriteria, movement;
 
 	   objectsInCriteria = txtanalyz.
-	       getObjectsOfTypeAndCategory(data, {}, "action-verbs", "movement");
+	       getObjectsOfActionClass(data, {}, "action-verbs", "movement");
 	   movement = objectsInCriteria["action-verbs"]["movement"];
-	   
+
 	   assert.isArray(movement);
     });
 
 
-    it("getTypeAndCategoryOfVerb(verb) -  should return an object", function(){
+    it("getVerbClass(verb) -  should return an object", function(){
 
 	var play, playClass;
 
 	playClass = {type : 'action-verbs', c: 'behaviour', verb: 'play'};
-	play = txtanalyz.getTypeAndCategoryOfVerb("play");
+	play = txtanalyz.getVerbClass("play");
 
 	assert.deepEqual(playClass, play);
     });
@@ -109,7 +109,7 @@ describe ('text analyser', function (){
 	movClass = {type : 'action-verbs', c: 'movement'};
 	
 	objectsInCriteria = txtanalyz.
-	    getObjectsOfTypeAndCategory(data, {}, "action-verbs", "movement");
+	    getObjectsOfActionClass(data, {}, "action-verbs", "movement");
 	assocClass = txtanalyz.actionClassesAssocToObject("coffee", objectsInCriteria);
 
 	
