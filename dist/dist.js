@@ -21455,11 +21455,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _data = __webpack_require__(177);
+	var _data = __webpack_require__(173);
 
 	var _data2 = _interopRequireDefault(_data);
 
-	var _compPropLi = __webpack_require__(173);
+	var _compPropLi = __webpack_require__(174);
 
 	var _compPropLi2 = _interopRequireDefault(_compPropLi);
 
@@ -21487,6 +21487,7 @@
 							_data2.default.forEach(function (item) {
 										edit["p" + item.n] = item;
 										edit[item.n] = "edit";
+										edit["e" + item.n] = "";
 							});
 
 							_this.state = edit;
@@ -21501,16 +21502,19 @@
 										if (null != this.opened) {
 													var op = {};
 													op[this.opened] = "edit";
+													op["e" + this.opened] = "";
 													this.setState(op);
 										}
 										var st = {};
 
 										if (val) {
 													st[i] = "edit pop";
+													st["e" + i] = "inedit";
 													this.opened = i;
 										} else {
 													this.opened = null;
 													st[i] = "edit";
+													st["e" + i] = "";
 										}
 										this.setState(st);
 							}
@@ -21545,10 +21549,13 @@
 										this.editClass = "edit";
 										this.items = [];
 										_data2.default.forEach(function (item) {
-													var k = "p" + item.n;
+													var k = "p" + item.n,
+													    emode = "e" + item.n;
+
 													self.items.push(_react2.default.createElement(_compPropLi2.default, {
 																key: item.n,
 																item: self.state[k],
+																inedit: self.state[emode],
 																edit: self.state[item.n],
 																editmode: self.edit.bind(self, item.n),
 																updateSub: self.updateSub.bind(self),
@@ -21571,6 +21578,197 @@
 
 /***/ },
 /* 173 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = [{
+				n: 1,
+				s: 'Anna',
+				v: 'is eating',
+				o: 'a cookie'
+	}, {
+				n: 2,
+				s: 'Henry',
+				v: 'does',
+				o: 'a handstand'
+	}, {
+				n: 3,
+				s: 'Sarah',
+				o: 'a pen'
+	}, {
+				n: 4,
+				s: 'John',
+				v: 'tells'
+	}, {
+				n: 5,
+				s: '',
+				o: 'a drama'
+	}];
+
+	/*
+	module.exports = [
+	    {
+		n: 0,
+		s: 'Ani',
+		o: 'a drama',
+		v: 'plays'
+	    },{
+		n: 1,
+		s: 'Anna',
+		v: 'is eating',
+		o: 'a cookie'
+	    },{
+		n: 2,
+		s: 'Henry',
+		v: 'drinks',
+		o: 'coffe'
+	    },{
+		n: 3,
+		s: 'Sarah',
+		o: 'a pen'
+	    },{
+		n: 4,
+		s: 'John',
+		v: 'tells'
+	    },{
+		n: 5,
+		s: '',
+		o: 'a drama'
+	    },{
+		n : 5,
+		s : 'Mary',
+		v : 'plays',
+		o : 'with cats'
+	    },{
+		n : 6,
+		s : 'Alice',
+		v : 'scary',
+		o : 'cats'
+	    },{
+		n : 7,
+		s : 'Nicu',
+		v : "dislike",
+		o : "rats"
+	    },{
+		n : 8,
+		s : 'Alina',
+		v : 'eats',
+		o : 'cake'
+	    },{
+		n : 9,
+		s : 'Marius',
+		v : 'runs',
+		o : 'at school'
+	    },{
+		n : 10,
+		s : 'Alina',
+		v : 'plays',
+		o : 'chess'
+	    },{
+		n : 11,
+		s : 'Mihai',
+		v : 'go hiking',
+		o : 'Sundays'
+	    },{
+		n : 12,
+		s : 'Mihai',
+		v : 'drinks',
+		o : 'juicy'
+	    },{
+		n : 13,
+		s : 'Andrei',
+		v : 'drinks',
+		o : 'wisky'
+	    },{
+		n : 14,
+		s : 'Mike',
+		v : 'plays',
+		o : 'on computer'
+	    },{
+		n : 15,
+		s : 'Andreas',
+		v : 'drinks',
+		o : 'coffee'
+	    },{
+		n : 16,
+		s : 'Claudia',
+		v : 'loves',
+		o : 'pandas'
+	    },{
+		n : 17,
+		s : 'Claudia',
+		v : 'avoids',
+		o : 'ducks'
+	    },{
+		n : 18,
+		s : 'My friends',
+		v : 'grow',
+		o : 'rabbits'
+	    },{
+		n : 19,
+		s : 'The Doctor',
+		v : 'knows',
+		o : 'the medicine'
+	    }
+	    ,{
+		n : 20,
+		s : 'The pacients',
+		v : 'understand',
+		o : 'the implications'
+	    },{
+		n : 21,
+		s : 'John',
+		v : 'understands',
+		o : 'very quickly'
+	    },{
+		n : 22,
+		s : 'Alice',
+		v : 'likes',
+		o : 'animals'
+	    },{
+		n : 23,
+		s : 'Vlad',
+		v : 'likes',
+		o : 'cars'
+	    },{
+		n : 24,
+		s : 'Alina',
+		v : 'enjoys',
+		o : 'holidays'
+	    },{
+		n : 25,
+		s : 'They',
+		v : 'fear',
+		o : 'snakes'
+	    },{
+		n : 26,
+		s : 'John',
+		v : 'plays',
+		o : 'with cats'
+	    },{
+		n : 27,
+		s : 'My wife',
+		v : 'dislikes',
+		o : 'coffee'
+	    },{
+		n : 28,
+		s : 'Daniela',
+		v : 'makes',
+		o : 'coffee'
+	    },{
+		n : 28,
+		s : 'Daniela',
+		v : 'feeds',
+		o : 'ducks'
+	    }
+	]
+
+
+	*/
+
+/***/ },
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21586,7 +21784,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _jquery = __webpack_require__(174);
+	var _jquery = __webpack_require__(175);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -21611,7 +21809,7 @@
 
 			_this.state = {
 				statusbar: "statusbar",
-				edit: false
+				inedit: ""
 			};
 			return _this;
 		}
@@ -21670,7 +21868,7 @@
 
 				return _react2.default.createElement(
 					"li",
-					{ id: item.n, className: "list-group-item" },
+					{ id: item.n, className: this.props.inedit + " list-group-item" },
 					_react2.default.createElement(
 						"div",
 						{
@@ -21759,7 +21957,7 @@
 	exports.default = CompPropLI;
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {"use strict";
@@ -24015,17 +24213,17 @@
 	      return this.on(b, a, c, d);
 	    }, undelegate: function undelegate(a, b, c) {
 	      return 1 === arguments.length ? this.off(a, "**") : this.off(b, a || "**", c);
-	    } }), r.parseJSON = JSON.parse, "function" == "function" && __webpack_require__(176) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	    } }), r.parseJSON = JSON.parse, "function" == "function" && __webpack_require__(177) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    return r;
 	  }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));var Tb = a.jQuery,
 	      Ub = a.$;return r.noConflict = function (b) {
 	    return a.$ === r && (a.$ = Ub), b && a.jQuery === r && (a.jQuery = Tb), r;
 	  }, b || (a.jQuery = a.$ = r), r;
 	});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(175)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(176)(module)))
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -24041,203 +24239,12 @@
 
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
-
-/***/ },
-/* 177 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	module.exports = [{
-				n: 1,
-				s: 'Anna',
-				v: 'is eating',
-				o: 'a cookie'
-	}, {
-				n: 2,
-				s: 'Henry',
-				v: 'does',
-				o: 'a handstand'
-	}, {
-				n: 3,
-				s: 'Sarah',
-				o: 'a pen'
-	}, {
-				n: 4,
-				s: 'John',
-				v: 'tells'
-	}, {
-				n: 5,
-				s: '',
-				o: 'a drama'
-	}];
-
-	/*
-	module.exports = [
-	    {
-		n: 0,
-		s: 'Ani',
-		o: 'a drama',
-		v: 'plays'
-	    },{
-		n: 1,
-		s: 'Anna',
-		v: 'is eating',
-		o: 'a cookie'
-	    },{
-		n: 2,
-		s: 'Henry',
-		v: 'drinks',
-		o: 'coffe'
-	    },{
-		n: 3,
-		s: 'Sarah',
-		o: 'a pen'
-	    },{
-		n: 4,
-		s: 'John',
-		v: 'tells'
-	    },{
-		n: 5,
-		s: '',
-		o: 'a drama'
-	    },{
-		n : 5,
-		s : 'Mary',
-		v : 'plays',
-		o : 'with cats'
-	    },{
-		n : 6,
-		s : 'Alice',
-		v : 'scary',
-		o : 'cats'
-	    },{
-		n : 7,
-		s : 'Nicu',
-		v : "dislike",
-		o : "rats"
-	    },{
-		n : 8,
-		s : 'Alina',
-		v : 'eats',
-		o : 'cake'
-	    },{
-		n : 9,
-		s : 'Marius',
-		v : 'runs',
-		o : 'at school'
-	    },{
-		n : 10,
-		s : 'Alina',
-		v : 'plays',
-		o : 'chess'
-	    },{
-		n : 11,
-		s : 'Mihai',
-		v : 'go hiking',
-		o : 'Sundays'
-	    },{
-		n : 12,
-		s : 'Mihai',
-		v : 'drinks',
-		o : 'juicy'
-	    },{
-		n : 13,
-		s : 'Andrei',
-		v : 'drinks',
-		o : 'wisky'
-	    },{
-		n : 14,
-		s : 'Mike',
-		v : 'plays',
-		o : 'on computer'
-	    },{
-		n : 15,
-		s : 'Andreas',
-		v : 'drinks',
-		o : 'coffee'
-	    },{
-		n : 16,
-		s : 'Claudia',
-		v : 'loves',
-		o : 'pandas'
-	    },{
-		n : 17,
-		s : 'Claudia',
-		v : 'avoids',
-		o : 'ducks'
-	    },{
-		n : 18,
-		s : 'My friends',
-		v : 'grow',
-		o : 'rabbits'
-	    },{
-		n : 19,
-		s : 'The Doctor',
-		v : 'knows',
-		o : 'the medicine'
-	    }
-	    ,{
-		n : 20,
-		s : 'The pacients',
-		v : 'understand',
-		o : 'the implications'
-	    },{
-		n : 21,
-		s : 'John',
-		v : 'understands',
-		o : 'very quickly'
-	    },{
-		n : 22,
-		s : 'Alice',
-		v : 'likes',
-		o : 'animals'
-	    },{
-		n : 23,
-		s : 'Vlad',
-		v : 'likes',
-		o : 'cars'
-	    },{
-		n : 24,
-		s : 'Alina',
-		v : 'enjoys',
-		o : 'holidays'
-	    },{
-		n : 25,
-		s : 'They',
-		v : 'fear',
-		o : 'snakes'
-	    },{
-		n : 26,
-		s : 'John',
-		v : 'plays',
-		o : 'with cats'
-	    },{
-		n : 27,
-		s : 'My wife',
-		v : 'dislikes',
-		o : 'coffee'
-	    },{
-		n : 28,
-		s : 'Daniela',
-		v : 'makes',
-		o : 'coffee'
-	    },{
-		n : 28,
-		s : 'Daniela',
-		v : 'feeds',
-		o : 'ducks'
-	    }
-	]
-
-
-	*/
 
 /***/ }
 /******/ ]);

@@ -16,6 +16,7 @@ export default class CompPropUL extends React.Component {
 	data.forEach(function(item){
 	    edit["p"+item.n] = item;
 	    edit[item.n] = "edit";
+	    edit["e"+item.n] = "";
 	});
 	
 	this.state = edit;
@@ -27,16 +28,19 @@ export default class CompPropUL extends React.Component {
 	if(null != this.opened){
 	    let op = {};
 	    op[this.opened] = "edit";
+	    op["e"+this.opened] = "";
 	    this.setState(op);
 	}
 	let st = {};
 	
 	if (val){
 	    st[i] = "edit pop";
+	    st["e"+i] = "inedit";
 	    this.opened = i;
 	}else {
 	    this.opened = null; 
 	    st[i] = "edit";
+	    st["e"+i] = "";
 	}
 	this.setState(st);
     };
@@ -69,10 +73,12 @@ export default class CompPropUL extends React.Component {
 	this.editClass = "edit";
 	this.items = [];	
 	data.forEach(function(item){
-	    let k = "p"+item.n;
+	    let k = "p"+item.n, emode = "e"+item.n;
+	    
 	    self.items.push(<CompPropLI
 			    key={item.n}
 			    item={self.state[k]}
+			    inedit={self.state[emode]}
 			    edit={self.state[item.n]}
 			    editmode={self.edit.bind(self, item.n)}
 			    updateSub={self.updateSub.bind(self)}

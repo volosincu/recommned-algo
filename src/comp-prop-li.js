@@ -10,7 +10,7 @@ export default class CompPropLI extends React.Component {
 	super();
 	this.state = {
 	    statusbar : "statusbar",
-	    edit : false
+	    inedit : ""
 	}
     };
 
@@ -61,7 +61,7 @@ export default class CompPropLI extends React.Component {
 
 		
 	return (
-	  <li id={item.n} class="list-group-item">
+	<li id={item.n} class={this.props.inedit + " list-group-item"}>
 	    <div
 	    onClick={(event) => this.edit(event)}
 	        onMouseOver={this.showStatus.bind(this)}

@@ -43,6 +43,10 @@
     
 }
 
+#propozi .list-group-item.inedit {
+    background-color: #eef;
+}
+
 #propozi .list-group-item {
     margin-bottom: 0px;
     border: none;
