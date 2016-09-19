@@ -1,22 +1,4 @@
-.navbar {
-    margin-top: 25px;
-}
 
-.navbar .rtext {
-
-        margin-right: 135px;
-    margin-left: 140px;
-}
-
-.navbar .robjects {
-    margin-right: 50px;
-        margin-left: 146px;
-}
-
-.navbar .ractions {
-    margin-right: 50px;
-    margin-left: 129px;
-}
 .list-group {
     width: 345px;
     display: inline-block;
@@ -26,10 +8,7 @@
 
 .list-group:first-of-type {
     margin-left: 25px;
-    height: 575px;
-    overflow-y: scroll;
-    border-bottom: 1px solid #ccc;
-    width: 350;
+    
 }
 
 .list-group:last-of-type {
@@ -60,18 +39,122 @@
 
 
 #propozi .sel-v:hover{
-text-decoration : none    
+    text-decoration : none;    
     
 }
 
-#actions .reorderByCategory {
-    text-decoration: underline;
+#propozi .list-group-item {
+    margin-bottom: 0px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-bottom: 4px;
+    padding: 20px 20px;
 }
 
-#actions .cat-actions {
-    color : #aaa;
-    font-size: 12px;
+#propozi .status {
+    height: 21px;
+    width: 20px;
+    float: right;
+    position: relative;
+    top: 20px;
+    cursor: pointer;
+    border-radius: 11px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    margin-right: 3px;
 }
-#complements li {
-    color: #767676;
+
+#propozi .statusbar {
+    display: none;
+    float:right;
+    position: relative;
+    top: -65px;
 }
+#propozi .statusbar.pop {
+    display: inline-block;
+    float: right;
+    position: relative;
+    z-index: 100;
+}
+
+#propozi .isBlank{
+    background-color: #913b3b;
+}
+
+#propozi .isComplete{
+    background-color: #3b6d91;;
+}
+
+
+#propozi .txopacity {
+    width: 100%;
+    height : 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+#propozi .txopacity .txo {
+    display: inline-block;
+    background-color: #fff;
+}
+
+#propozi .txo1 {
+    height: 100%;
+    width: 35px;
+    opacity: 0.6;
+}
+#propozi .txo2 {
+    height: 100%;
+    width: 30px;
+        opacity: 0.6;
+}
+#propozi .txo3 {
+    height: 100%;
+    width: 40px;
+        opacity: 0.7;
+}
+#propozi .txo4 {
+    height: 100%;
+    width: 235px;
+    opacity: 0.8;
+}
+
+#propozi .edit {
+    dispay: none;
+}
+
+#propozi .edit input {
+    display: none;
+}
+
+#propozi .edit.pop {
+
+    display : block;
+    top: 0px;
+    right: -209px;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    border : 1px solid #ccc;
+    border-radius : 2px;
+}
+
+#propozi .edit.pop input{
+    display: block;
+}
+
+#propozi .form-group input{
+    margin-bottom: 9px;
+}
+#propozi .form-group {
+    margin-bottom: 0px;
+}
+#propozi .edit.pop .form-group {
+    padding: 10px 13px;
+
+}
+    

@@ -45,8 +45,7 @@ module.exports = {
     ],
     resolve: {
 	alias: {
-	    jquery: "../lib/jquery",
-	    lodash: "../lib/underscore-min"
+	    jquery: "../lib/jquery"
 	}
     }
 };
